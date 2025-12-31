@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Opulum</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js from CDN -->
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <!-- Main Menu -->
+  <div id="menu" class="overlay">
+    <h1>Opulum</h1>
+    <div class="buttons">
+      <button id="btnPlay">Play</button>
+      <button id="btnMuseum">Visit Museum</button>
+    </div>
+    <p class="hint">WASD to move  • Left click to attack/interact • E = Inventory</p>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="overlay hidden">
+    <div id="topbar">
+      <span id="fragments">Fragments: 0</span>
+      <span id="crystals">Crystals: 0</span>
+      <span id="health">HP: 100</span>
+      <button id="openInventory">Inventory (E)</button>
+      <button id="openShop">Shop</button>
+      <button id="toggleBuild">Build</button>
+    </div>
+    <div id="centerHint" class="hint"></div>
+  </div>
+
+  <!-- Inventory -->
+  <div id="inventory" class="panel hidden">
+    <h2>Inventory</h2>
+    <div id="inventoryList"></div>
+    <div class="controls">
+      <button id="equipWeapon">Equip Weapon</button>
+      <button id="equipSpell">Equip Spell</button>
+      <button id="upgradeWeapon">Upgrade Weapon (use crystals)</button>
+      <button id="placeInMuseum">Place in Museum</button>
+    </div>
+  </div>
+
+  <!-- Shop Modal -->
+  <div id="shopModal" class="modal hidden">
+    <div class="shopPanel futuristic">
+      <h2>Arcane Exchange</h2>
+      <div id="shopItems" class="shopGrid"></div>
+      <div class="shopFooter">
+        <button id="closeShop">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="debug" class="overlay small">Mode: <span id="mode">menu</span></div>
+
+  <script src="app.js"></script>
+  <!-- Optional: test harness for automated checks -->
+  <!-- <script src="test_suite.js"></script> -->
+</body>
+</html>
