@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Opulum</title>
+  <title>Opulum — Web Prototype</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Three.js from CDN -->
+  <!-- Three.js -->
   <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
       <button id="btnPlay">Play</button>
       <button id="btnMuseum">Visit Museum</button>
     </div>
-    <p class="hint">WASD to move  • Left click to attack/interact • E = Inventory</p>
+    <p class="hint">WASD to move • Right mouse drag to rotate • Left click to attack/interact • E = Inventory • Esc = Close UI</p>
   </div>
 
   <!-- HUD -->
@@ -35,7 +35,7 @@
   </div>
 
   <!-- Inventory -->
-  <div id="inventory" class="panel hidden">
+  <div id="inventory" class="panel hidden" tabindex="0">
     <h2>Inventory</h2>
     <div id="inventoryList"></div>
     <div class="controls">
@@ -48,11 +48,11 @@
 
   <!-- Shop Modal -->
   <div id="shopModal" class="modal hidden">
-    <div class="shopPanel futuristic">
+    <div class="shopPanel futuristic" role="dialog" aria-modal="true">
       <h2>Arcane Exchange</h2>
       <div id="shopItems" class="shopGrid"></div>
       <div class="shopFooter">
-        <button id="closeShop">Close</button>
+        <button id="closeShop">Close Shop</button>
       </div>
     </div>
   </div>
@@ -60,7 +60,5 @@
   <div id="debug" class="overlay small">Mode: <span id="mode">menu</span></div>
 
   <script src="app.js"></script>
-  <!-- Optional: test harness for automated checks -->
-  <!-- <script src="test_suite.js"></script> -->
 </body>
 </html>
